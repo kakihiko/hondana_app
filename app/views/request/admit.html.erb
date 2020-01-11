@@ -1,0 +1,20 @@
+<div class="main posts-index">
+  <div class="container">
+    <table>
+      <tr>
+        <th>本のタイトル</th>
+        <th>申請者</th>
+        <th>許可</th>
+        <th>却下</th>
+      </tr>
+      <% @requests.each do |request| %>
+        <tr>
+          <td><%= request.title %></td>
+          <td><%= request.requester %></td>
+          <td><%= link_to "許可", {controller: "request", action: "setadmit", title: request.title, requester: request.requester, status:"許可"}, method: "post" %></td>
+          <td><%= link_to "却下", {controller: "request", action: "setadmit", title: request.title, requester: request.requester, status:"却下"}, method: "post" %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

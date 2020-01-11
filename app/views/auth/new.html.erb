@@ -1,0 +1,20 @@
+<div class="main posts-index">
+  <div class="container">
+        <% @user.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
+          </div>
+        <% end %>
+    
+    <%= form_tag("/auth/create") do %>
+    <p>ユーザ名</p>
+    <input name="name">
+    <p>メールアドレス</p>
+    <input name="email">
+    <p>パスワード</p>
+    <input name="password" type="password">
+    <p><input type="submit" "送信"></p>
+    <% end %>
+      
+  </div>
+</div>

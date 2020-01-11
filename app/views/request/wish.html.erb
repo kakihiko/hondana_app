@@ -1,0 +1,18 @@
+<div class="main posts-index">
+  <div class="container">
+    <table>
+      <tr>
+        <th>本のタイトル</th>
+        <th>投稿者</th>
+        <th>ステータス</th>
+      </tr>
+      <% @requests.each do |request| %>
+        <tr>
+          <td><%= request.title %></td>
+          <td><%= request.user %></td>
+          <td><%= request.status %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

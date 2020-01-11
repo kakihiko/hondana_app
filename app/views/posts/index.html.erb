@@ -1,0 +1,18 @@
+<div class="main posts-index">
+  <div class="container">
+  <p>気になる本のタイトルをクリックしてください</p>
+    <table>
+      <tr>
+        <th>本のタイトル</th>
+        <th>投稿者</th>
+      </tr>
+      <% @posts.each do |post| %>
+        <tr>
+          <td><%= link_to(post.title, "/posts/#{post.id}") %></td>
+          <td><%= post.user %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+

@@ -1,0 +1,9 @@
+<div class="main posts-index">
+  <div class="container">
+    <p>借りたい場合は申請ボタンをクリックしてください</p>
+      <p>本のタイトル:<%= @post.title %></p>
+      <p>感想:<%= @post.comment %></p>
+      <p>投稿者:<%= @post.user %></p>
+      <button type="button"><%= link_to "申請", {controller: "request", action: "setwish", title: @post.title, user: @post.user}, method: "post" %></button>
+  </div>
+</div>

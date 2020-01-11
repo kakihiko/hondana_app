@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hondana</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+    <header>
+      <div class="header-logo">
+        <%= link_to "hondana", "/" %>
+      </div>
+      <ul class="header-menus">
+        <% if session[:id] %> 
+        <li>
+          <%= link_to "hondanaを見る", "/posts/index" %>
+        </li>
+        <li>
+          <%= link_to "hondanaに追加", "/posts/new" %>
+        </li>
+        <li>
+          <%= link_to "申請状況", "/request/wish" %>
+        </li>
+        <li>
+          <%= link_to "受付状況", "/request/admit" %>
+        </li>
+        <li>
+          ようこそ<%= session[:name] %>さん
+        </li>
+        <li>
+          <%= link_to "ログアウト", "/auth/logout" %>
+        </li>
+        <% else %>
+        <li >
+          <%= link_to "hondanaとは", "/" %>
+        </li>
+        <li>
+          <%= link_to "新規登録", "/auth/new" %>
+        </li>
+        <li>
+          <%= link_to "ログイン", "/auth/login" %>
+        </li>
+        <% end %>
+      </ul>
+    </header>
+  <body>
+    <%= yield %>
+  </body>
+</html>
